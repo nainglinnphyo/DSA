@@ -1,6 +1,6 @@
 function bubbleSort(arr) {
-     var len = arr.length;
-     var swapped;
+     const len = arr.length;
+     let swapped;
      do {
           swapped = false;
           for (var i = 0; i < len - 1; i++) {
@@ -20,8 +20,7 @@ function bubbleSort(arr) {
      return arr;
 }
 
-// Example usage:
-var unsortedArray = [25, 64, 12, 22, 11];
-var sortedArray = bubbleSort(unsortedArray);
+const unsortedArray = [25, 64, 12, 22, 11];
+const sortedArray = bubbleSort(unsortedArray);
 
 console.log("Sorted Array:", sortedArray);

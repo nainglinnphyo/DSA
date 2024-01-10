@@ -1,11 +1,11 @@
-function insertionSort(arr) {
-     var len = arr.length;
+function insertionSort(arr, property) {
+     const len = arr.length;
 
-     for (var i = 1; i < len; i++) {
-          var key = arr[i];
-          var j = i - 1;
-          // Move elements of arr[0..i-1] that are greater than key to one position ahead of their current position
-          while (j >= 0 && arr[j] > key) {
+     for (let i = 1; i < len; i++) {
+          const key = arr[i];
+          let j = i - 1;
+
+          while (j >= 0 && arr[j][property] > key[property]) {
                arr[j + 1] = arr[j];
                j = j - 1;
           }
@@ -17,7 +17,14 @@ function insertionSort(arr) {
 }
 
 // Example usage:
-var unsortedArray = [64, 25, 12, 22, 11];
-var sortedArray = insertionSort(unsortedArray);
+const unsortedArray = [
+     { value: 64 },
+     { value: 25 },
+     { value: 12 },
+     { value: 22 },
+     { value: 11 }
+];
+
+const sortedArray = insertionSort(unsortedArray, 'value');
 
 console.log("Sorted Array:", sortedArray);
